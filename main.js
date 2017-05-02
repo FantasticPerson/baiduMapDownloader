@@ -14,7 +14,7 @@ function createWindow() {
             plugins: false
         }
     });
-    mainWindow.loadURL(path.resolve(__dirname,'./src/demo.html'));
+    mainWindow.loadURL(path.resolve(__dirname,'./src/index.html'));
     mainWindow.webContents.openDevTools();
     mainWindow.on('closed', function () {
         mainWindow = null;
