@@ -133,13 +133,16 @@ function downloadBaiduTiles(){
 		}
 	}
 		
-	return function(map, callback){
+	return function(map, ids, callback){
+		for(var i=0;i<ids.length;i++){
+            getFullTiles(map,ids[i],callback);
+		}
 		// getFullTiles(map,11,callback);
 		// getFullTiles(map,12,callback);
 		// getFullTiles(map,13,callback);
 		// getFullTiles(map,14,callback);
 		// getFullTiles(map,15,callback);
 		// getFullTiles(map,16,callback);
-		getFullTiles(map,17,callback);
+		// getFullTiles(map,17,callback);
 	};
 }

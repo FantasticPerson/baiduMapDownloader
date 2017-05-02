@@ -10,9 +10,15 @@
     </head>
     <body>
         <div style="width:1040px;height:680px;border:1px solid gray;margin:auto" id="container"></div>
-            <br>
-                <input type="button" value="findtiles" style="display: block;margin:auto;" onclick="findtiles();">
-            <br>
+            <input type="checkbox" value="11" id="checkbox11"/>11
+            <input type="checkbox" value="12" id="checkbox12"/>12
+            <input type="checkbox" value="13" id="checkbox13"/>13
+            <input type="checkbox" value="14" id="checkbox14"/>14
+            <input type="checkbox" value="15" id="checkbox15"/>15
+            <input type="checkbox" value="16" id="checkbox16"/>16
+            <input type="checkbox" value="17" id="checkbox17"/>17
+            <input type="button" value="findtiles" style="display: block;margin:auto;" onclick="findtiles();">
+        </div>
         <div id="list"></div>
     </body>
 </html>
@@ -49,8 +55,16 @@
 
     function findtiles() {
         obj = [];
-        var findAllTiles = downloadBaiduTiles();
-        findAllTiles(map, addUrls);
+        var ids = [];
+        for(var i=0;i<7;i++){
+            var item = document.getElementById('checkbox'+(11+i));
+            if(item.checked){
+                ids.push(11+i);
+            }
+        }
+        console.log(ids);
+        var findAllTiles = downloadBaiduTiles(ids);
+        findAllTiles(map, ids, addUrls);
         excuteDowload(obj);
     }
 </script>
